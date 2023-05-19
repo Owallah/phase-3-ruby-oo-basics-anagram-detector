@@ -7,13 +7,9 @@ class Anagram
 
     def match(word)
         anagram = []
-        isAnagram = false
         word.map do |arr_word|
-            test_word = arr_word.chars
-            isAnagram_arr = test_word.sort == @word.chars.sort
-            if isAnagram_arr == true
-                isAnagram = true
-                anagram.push(test_word.join(''))
+            if arr_word.chars.sort == @word.chars.sort
+                anagram.push(arr_word)
             end
         end
         anagram
